@@ -1,0 +1,43 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+</head>
+<body>
+
+<h2>Bead Crack and Side Crack Expand Check Record</h2>
+<h3>ใบบันทึกการเช็คขอบแตกและแก้มแตกด้วยชุดถ่างขอบ</h3>
+<h3><?php echo $showuser; ?></h3>
+<form method ="post" action="testconnect.php">
+  <div class="name">
+  <label for="fname">Member name:</label><br>
+  <input type="text" id="member_name" name="member_name" value="User1" readonly><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="member_lname" name="member_lname"><br>
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="password">Password:</label><br>
+  <input type="password" id="password" name="password"><br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"><br><br></div>
+  <div class="submit"><input type="submit" value="Submit"></div>
+  
+</form> 
+</body>
+</html>
