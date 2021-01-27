@@ -6,7 +6,10 @@ session_start();
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
+
 }
+$em_name = "";
+$em_name = $_SESSION["username"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,23 +17,32 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bootstrap.css">
+    <style type="text/css">
+        body{ font: 14px sans-serif; text-align: center; }
+    </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 
 </head>
 <body>
-
+<link href="select2-4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
+<div class="page-header">
+        <h1><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b> เข้าสู่ระบบ</h1>
+        <a href="reset-password.php" class="btn btn-warning">รีเซ็ทพาสเวิร์ด</a>
+        <a href="logout.php" class="btn btn-danger">ออกจากระบบ</a>
+    </div>
 <h2>Bead Crack and Side Crack Expand Check Record</h2>
 <h3>ใบบันทึกการเช็คขอบแตกและแก้มแตกด้วยชุดถ่างขอบ</h3>
-<h3><?php echo $showuser; ?></h3>
 <form method ="post" action="testconnect.php">
   <div class="name">
-  <label for="fname">Member name:</label><br>
-  <input type="text" id="member_name" name="member_name" value="User1" readonly><br>
-  <label for="lname">Last name:</label><br>
+  <label for="fname">รหัสพนักงาน:</label><br>
+  <input type="text" id="member_name" name="member_name" value="<?php echo $em_name; ?>" readonly><br>
+  <label for="lname">ไซส์ยาง:</label><br>
   <input type="text" id="member_lname" name="member_lname"><br>
-  <label for="username">Username:</label><br>
+  <label for="username">จำนวน:</label><br>
   <input type="text" id="username" name="username"><br>
   <label for="password">Password:</label><br>
   <input type="password" id="password" name="password"><br>
