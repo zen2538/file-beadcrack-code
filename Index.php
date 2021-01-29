@@ -21,6 +21,7 @@ $em_name = $_SESSION["username"];
     <style type="text/css">
         body{ font: 14px sans-serif; text-align: center; }
     </style>
+<link rel="stylesheet" href="styletab.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
@@ -29,6 +30,8 @@ $em_name = $_SESSION["username"];
 <body>
 <link href="select2-4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="scripttab.js"></script>
+
 <div class="page-header">
         <h1><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b> เข้าสู่ระบบ</h1>
         <a href="reset-password.php" class="btn btn-warning">รีเซ็ทพาสเวิร์ด</a>
@@ -36,6 +39,30 @@ $em_name = $_SESSION["username"];
     </div>
 <h2>Bead Crack and Side Crack Expand Check Record</h2>
 <h3>ใบบันทึกการเช็คขอบแตกและแก้มแตกด้วยชุดถ่างขอบ</h3>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Goodtire')" id="defaultOpen">ยางดี</button>
+  <button class="tablinks" onclick="openCity(event, 'Reworktire')">ยางซ่อม</button>
+  <button class="tablinks" onclick="openCity(event, 'Rejecttire')">ยางเสีย</button>
+</div>
+
+<div id="Goodtire" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>ยางดี</h3>
+  <p>หน้านี้สำหรับบันทึกยอดยางดี</p>
+</div>
+
+<div id="Reworktire" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>ยางซ่อม</h3>
+  <p>หน้านี้สำหรับบันทึกยอดยางซ่อม</p> 
+</div>
+
+<div id="Rejecttire" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>ยางเสีย</h3>
+  <p>หน้านี้สำหรับบันทึกยอดยางเสีย</p>
+</div>
+
 <form method ="post" action="testconnect.php">
   <div class="name">
   <label for="fname">รหัสพนักงาน:</label><br>
