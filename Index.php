@@ -49,21 +49,7 @@ $em_name = $_SESSION["username"];
   <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
   <h3>ยางดี</h3>
   <p>หน้านี้สำหรับบันทึกยอดยางดี</p>
-</div>
-
-<div id="Reworktire" class="tabcontent">
-  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-  <h3>ยางซ่อม</h3>
-  <p>หน้านี้สำหรับบันทึกยอดยางซ่อม</p> 
-</div>
-
-<div id="Rejecttire" class="tabcontent">
-  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
-  <h3>ยางเสีย</h3>
-  <p>หน้านี้สำหรับบันทึกยอดยางเสีย</p>
-</div>
-
-<form method ="post" action="testconnect.php">
+  <form method ="post" action="testconnect.php">
   <div class="name">
   <label for="fname">รหัสพนักงาน:</label><br>
   <input type="text" id="member_name" name="member_name" value="<?php echo $em_name; ?>" readonly><br>
@@ -71,11 +57,56 @@ $em_name = $_SESSION["username"];
   <input type="text" id="member_lname" name="member_lname"><br>
   <label for="username">จำนวน:</label><br>
   <input type="text" id="username" name="username"><br>
-  <label for="password">Password:</label><br>
-  <input type="password" id="password" name="password"><br>
-  <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email"><br><br></div>
+  <label for="problemtype">ประเภทยาง:</label><br>
+  <input type="text" id="problemtype" name="problemtype" value="ยางดี" readonly><br>
+  <label for="problem">ปัญหายาง:</label><br>
+  <input type="text" id="problem" name="problem" value="-" readonly><br><br></div>
   <div class="submit"><input type="submit" value="Submit"></div>
+  
+</form> 
+</div>
+
+<div id="Reworktire" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>ยางซ่อม</h3>
+  <p>หน้านี้สำหรับบันทึกยอดยางซ่อม</p> 
+  <form method ="post" action="testconnect.php">
+  <div class="name">
+  <label for="fname">รหัสพนักงาน:</label><br>
+  <input type="text" id="member_name" name="member_name" value="<?php echo $em_name; ?>" readonly><br>
+  <label for="lname">ไซส์ยาง:</label><br>
+  <input type="text" id="member_lname" name="member_lname"><br>
+  <label for="username">จำนวน:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="problemtype">ประเภทยาง:</label><br>
+  <input type="text" id="problemtype" name="problemtype" value="ยางซ่อม" readonly><br>
+  <label for="problem">ปัญหายาง:</label><br>
+  <input type="text" id="problem" name="problem"><br><br></div>
+  <div class="submit"><input type="submit" value="Submit"></div>
+  
+</form> 
+</div>
+
+<div id="Rejecttire" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>ยางเสีย</h3>
+  <p>หน้านี้สำหรับบันทึกยอดยางเสีย</p>
+  <form method ="post" action="testconnect.php">
+  <div class="name">
+  <label for="fname">รหัสพนักงาน:</label><br>
+  <input type="text" id="member_name" name="member_name" value="<?php echo $em_name; ?>" readonly><br>
+  <label for="lname">ไซส์ยาง:</label><br>
+  <input type="text" id="member_lname" name="member_lname"><br>
+  <label for="username">จำนวน:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="problemtype">ประเภทยาง:</label><br>
+  <input type="text" id="problemtype" name="problemtype" value="ยางเสีย" readonly><br>
+  <label for="problem">ปัญหายาง:</label><br>
+  <input type="text" id="problem" name="problem"><br><br></div>
+  <div class="submit"><input type="submit" value="Submit"></div>
+  
+</form> 
+</div>
   
 </form> 
 </body>

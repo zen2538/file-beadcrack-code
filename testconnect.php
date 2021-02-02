@@ -1,11 +1,10 @@
 <?php
 $member_name = filter_input(INPUT_POST, 'member_name');
-$member_lname = filter_input(INPUT_POST, 'member_lname');
-$username = filter_input(INPUT_POST, 'username');
-$password = filter_input(INPUT_POST, 'password');
-$email = filter_input(INPUT_POST, 'email');
-if (!empty($username)){
-if (!empty($password)){
+$size = filter_input(INPUT_POST, 'size');
+$amount = filter_input(INPUT_POST, 'amount');
+$problemtype = filter_input(INPUT_POST, 'problemtype');
+$problem = filter_input(INPUT_POST, 'problem');
+
 $host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
@@ -20,7 +19,7 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 }
 else{
 $sql = "INSERT INTO register_form (member_name,member_lname,username, password,email)
-values ('$member_name','$member_lname','$username','$password','$email')";
+values ('$member_name','$size','$amount','$problemtype','$problem')";
 if ($conn->query($sql)){
 header("Location: index.php");
 exit();
@@ -31,12 +30,12 @@ echo "Error: ". $sql ."
 }
 $conn->close();
 }
-}
+
 else{
 echo "Password should not be empty";
 die();
 }
-}
+
 else{
 echo "Username should not be empty";
 die();
